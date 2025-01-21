@@ -25,28 +25,27 @@ const Home = () => {
         const fetchRandomCars = async () => {
             try {
                 const response = await fetch('/api/cars');
-
+    
                 if (response.status === 500) {
                     setError('Serverio klaida');
                     return;
-                };
-
-                const json = await response.json();
-
-                if (!response) {
-                    setError(json.error);
+                }
+    
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    setError(errorData.error || 'Įvyko klaida');
                     return;
-                };
-
+                }
+    
+                const json = await response.json();
                 const randomCars = json.sort(() => Math.random() - 0.5).slice(0, 4);
                 setCarsData(randomCars);
                 setError(null);
-
             } catch (err) {
-                setError(err);
-            };
+                setError(err.message || 'Nepavyko gauti duomenų');
+            }
         };
-
+    
         fetchRandomCars();
     }, []);
 
