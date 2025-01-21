@@ -1,0 +1,84 @@
+.edit-reservation {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-reservation .form-cancel {
+    margin-right: 60px;
+}
+
+.edit-reservation form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    text-align: right;
+    border: 1px solid #EBEBEB;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.edit-reservation form h3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+    border: none !important;
+}
+
+.edit-reservation select {
+    height: 30px;
+    width: 200px;
+    background-color: var(--blue-6);
+    border: 1px solid var(--blue-5);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 10px auto 5px;
+}
+
+.edit-reservation input {
+    height: 5px;
+    border: 1px solid var(--blue-5);
+    border-radius: 5px;
+}
+
+.edit-reservation label {
+    margin-left: 50px;
+    text-align: left;
+}
+
+.edit-reservation form .buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.edit-reservation button.link-btn {
+    display: block;
+    margin-left: 15px;
+    background-color: var(--blue-5);
+    color: var(--background-color);
+    padding: 5px 10px 6px;
+    margin-bottom: 5px;
+}
+
+.edit-reservation .form-cancel button.link-btn.delete {
+    margin: 20px auto 20px;
+}
+
+.edit-reservation a {
+    color: white;
+}
+
+.edit-reservation img {
+    max-width: 300px;
+}
+
+.edit-reservation .car-display-container {
+    border: 1px solid #EBEBEB;
+    border-radius: 12px;
+    height: 370px;
+    width: 320px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

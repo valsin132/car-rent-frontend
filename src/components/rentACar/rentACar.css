@@ -1,0 +1,99 @@
+.car-details .rent-table form {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    background-color: var(--blue-1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.car-details .rent-table form h3 {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.car-details .rent-table label {
+    display: inline-block;
+    text-align: left;
+    margin: 5px 0 5px 50px;
+    width: 100%;
+}
+
+.car-details .rent-table input:not(:last-of-type) {
+    width: 255px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 30px;
+    padding: 10px 0 0 15px;
+}
+
+.car-details .rent-table input:last-of-type {
+    display: inline;
+}
+
+
+.car-details .rent-table form .checkbox {
+    display: flex;
+    font-size: 0.7rem;
+    margin-top: 10px;
+}
+
+.car-details .rent-table form .checkbox label {
+    margin: 0;
+}
+
+.css-1lptig5-MuiFormControl-root-MuiTextField-root {
+    border: none !important;
+}
+
+.css-1lptig5-MuiFormControl-root-MuiTextField-root {
+    background: none !important;
+}
+
+.car-details .rent-table form #agreement {
+    margin-right: 5px;
+}
+
+.car-details .rent-table form button.confirm {
+    display: block;
+    background-color: var(--blue-4);
+    color: var(--background-color);
+    font-size: 0.938rem;
+    padding: 5px 10px;
+    margin: 20px auto 0;
+}
+
+.rent-table .success-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rent-table .success-bg .success {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    width: 50%;
+    min-width: 300px;
+    padding: 30px;
+    text-align: center;
+    z-index: 999
+}
+
+.rent-table .success-bg .success h3 {
+    margin: 0 0 20px;
+}
+
+.rent-table .success-bg .success button {
+    background-color: var(--blue-5);
+    color: var(--background-color);
+    padding: 10px 20px;
+    margin: 0 5px;
+}

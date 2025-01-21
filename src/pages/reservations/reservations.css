@@ -1,0 +1,76 @@
+.reservations {
+    min-height: 80vh;
+}
+
+.reservations .row,
+.reservations .row-admin {
+    display: grid;
+    padding: 30px;
+    background-color: var(--blue-6);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 1px solid #EBEBEB;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.reservations .row {
+    grid-template-columns: 1.5fr 1fr 1fr 120px 120px;
+}
+
+.reservations .row:hover,
+.reservations .row-admin:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reservations .row-admin {
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 100px 100px;
+}
+
+.reservations .row-admin button.edit,
+.reservations .row button.edit {
+    padding: 5px 10px;
+    background-color: var(--blue-5);
+    color: var(--background-color);
+}
+
+.reservations .row-admin button.delete,
+.reservations .row button.delete {
+    padding: 5px 10px;
+    background-color: var(--blue-5);
+    color: var(--warning);
+    color: var(--background-color);
+}
+
+.col {
+    text-align: center;
+}
+
+.reservations .row .status,
+.reservations .row-admin .status {
+    color: var(--background-color);
+    padding-top: 2px;
+    border-radius: 20px;
+    max-width: 100px;
+}
+
+.reservations .row .pending,
+.reservations .row-admin .pending {
+    background-color: var(--pending);
+}
+
+.reservations .row .confirmed,
+.reservations .row-admin .confirmed {
+    background-color: var(--success);
+}
+
+.reservations .row .cancelled,
+.reservations .row-admin .cancelled {
+    background-color: var(--warning);
+}
+
+.reservations .row .completed,
+.reservations .row-admin .completed {
+    background-color: var(--blue-4);
+}
