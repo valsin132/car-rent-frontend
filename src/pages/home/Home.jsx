@@ -25,7 +25,7 @@ const Home = () => {
         const fetchRandomCars = async () => {
             try {
                 const response = await fetch('/api/cars');
-    
+                console.log('Response:', response);
                 if (response.status === 500) {
                     setError('Serverio klaida');
                     return;
