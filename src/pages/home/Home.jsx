@@ -25,23 +25,23 @@ const Home = () => {
         const fetchRandomCars = async () => {
             try {
                 const response = await fetch('/api/cars');
-                console.log('Response:', response);
-                if (response.status === 500) {
-                    setError('Serverio klaida');
-                    return;
-                }
-    
-                if (!response.ok) {
+                
+                // Check if the response is OK (status 200-299)
+                if (response.ok) {
+                    // Parse the JSON body of the response
+                    const json = await response.json();
+                    
+                    // If we successfully get the cars, randomize and set the data
+                    const randomCars = json.sort(() => Math.random() - 0.5).slice(0, 4);
+                    setCarsData(randomCars);
+                    setError(null);  // Clear any previous error
+                } else {
+                    // Handle any non-OK responses (e.g., 404, 500, etc.)
                     const errorData = await response.json();
                     setError(errorData.error || 'Įvyko klaida');
-                    return;
                 }
-    
-                const json = await response.json();
-                const randomCars = json.sort(() => Math.random() - 0.5).slice(0, 4);
-                setCarsData(randomCars);
-                setError(null);
             } catch (err) {
+                // Catch any other errors (network issues, etc.)
                 setError(err.message || 'Nepavyko gauti duomenų');
             }
         };
