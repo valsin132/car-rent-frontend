@@ -24,7 +24,7 @@ const Home = () => {
     useEffect(() => {
         const fetchRandomCars = async () => {
             try {
-                const response = await fetch('https://car-rent-backend-smoky.vercel.app/api/cars');
+                const response = await fetch('/api/cars');
                 console.log('Response:', response);
                 if (response.status === 500) {
                     setError('Serverio klaida');
