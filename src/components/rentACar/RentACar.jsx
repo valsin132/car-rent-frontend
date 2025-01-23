@@ -77,7 +77,7 @@ const RentACar = ({ carDetails }) => {
         };
 
         try {
-            const response = await fetch('/api/reservations', {
+            const response = await fetch(`${API_URL}/api/reservations`, {
                 method: 'POST',
                 body: JSON.stringify({ car_id, carTitle, dateRented, dateReturned }),
                 headers: {
