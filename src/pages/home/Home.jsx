@@ -18,13 +18,15 @@ const Home = () => {
     const [showModal, setShowModal] = useState(false);
     const [error, setError] = useState(null);
 
-    const API_URL = process.env.BACKEND_URL;
+    const API_URL = process.env.BACKEND_URL || 'http://localhost:5000';
 
     //Fetches a random set of cars from the API
     useEffect(() => {
         const fetchRandomCars = async () => {
             try {
                 const response = await fetch(`${API_URL}/api/cars`);
+                console.log("API URL:", API_URL);
+
                 console.log('Response:', response);
                 if (response.status === 500) {
                     setError('Serverio klaida');
