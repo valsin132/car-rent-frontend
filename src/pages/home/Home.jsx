@@ -18,13 +18,13 @@ const Home = () => {
     const [showModal, setShowModal] = useState(false);
     const [error, setError] = useState(null);
 
-    const API_URL = process.env.BACKEND_URL;
+    const API_URL = process.env.REACT_APP_API_URL;
+    console.log("API URL:", API_URL);
 
     //Fetches a random set of cars from the API
     useEffect(() => {
         const fetchRandomCars = async () => {
             try {
-                console.log("API URL:", API_URL);
                 const response = await fetch(`${API_URL}/api/cars`);
                 console.log('Response:', response);
                 if (response.status === 500) {
