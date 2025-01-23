@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { API_URL } from "../../constants";
 import './reservations.css';
 
 // Reservations component for displaying a list of reservations
@@ -20,7 +21,7 @@ const Reservations = () => {
             setIsLoading(true)
             try {
                 // Fetch reservations from the server using the user's token for authorization
-                const response = await fetch("/api/reservations", {
+                const response = await fetch(`${API_URL}/api/reservations`, {
                     headers: { 'Authorization': `Bearer ${user.token}` }
                 });
 
@@ -50,7 +51,7 @@ const Reservations = () => {
 
     const handleDelete = async (e, id) => {
         try {
-            const response = await fetch(`/api/reservations/${id}`, {
+            const response = await fetch(`${API_URL}/api/reservations/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${user.token}` }
             });

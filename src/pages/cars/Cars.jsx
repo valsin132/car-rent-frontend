@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { BodyTypeContext } from '../../context/BodyTypeContext';
+import { API_URL } from '../../constants';
 import './cars.css';
 
 // Component displaying a list of cars with filtering options
@@ -23,7 +24,7 @@ const Cars = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/cars');
+                const response = await fetch(`${API_URL}/api/cars`);
 
                 if (response.status === 500) {
                     setError('Serverio klaida');

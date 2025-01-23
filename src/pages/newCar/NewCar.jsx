@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import { API_URL } from "../../constants";
 import './newCar.css';
 
 // NewCar component for adding a new car to the system
@@ -60,7 +61,7 @@ const NewCar = () => {
             return;
         };
 
-        const response = await fetch('/api/cars', {
+        const response = await fetch(`${API_URL}/api/cars`, {
             method: 'POST',
             body: JSON.stringify({ imageUrl, model, brand, price, year, fuelType, transmission, seats, body }),
             headers: { 'Content-Type': 'application/json' }

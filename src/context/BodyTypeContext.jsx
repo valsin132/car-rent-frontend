@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { API_URL } from "../constants";
 
 // Define the body type context for car body types
 export const BodyTypeContext = createContext();
@@ -9,7 +10,7 @@ export const BodyTypeContextProvider = ({ children }) => {
     const [error, setError] = useState(null);
 
     const fetchAllBodyTypes = async () => {
-        const response = await fetch('/api/cars/types');
+        const response = await fetch(`${API_URL}/api/cars/types`);
 
         if (response.status === 500) {
             setError('Can not connect to server');

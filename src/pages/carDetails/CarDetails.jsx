@@ -2,6 +2,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import RentACar from '../../components/rentACar/RentACar';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { API_URL } from '../../constants';
 import './carDetails.css';
 
 // Component displaying detailed information about a specific car
@@ -16,7 +17,7 @@ const CarDetails = () => {
     useEffect(() => {
         const fetchCarDetails = async () => {
             try {
-                const response = await fetch(`/api/cars/${id}`);
+                const response = await fetch(`${API_URL}/api/cars/${id}`);
 
                 if (response.status === 500) {
                     setError('Serverio klaida');
@@ -44,7 +45,7 @@ const CarDetails = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`/api/cars/${id}`, {
+            const response = await fetch(`${API_URL}/api/cars/${id}`, {
                 method: 'DELETE'
             });
 

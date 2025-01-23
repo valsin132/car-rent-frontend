@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate, useParams, Link } from "react-router-dom";
+import { API_URL } from "../../constants";
 import './editCar.css';
 
 // Component for editing car details
@@ -32,7 +33,7 @@ const EditCar = () => {
         };
 
         // Sending a PUT request to update car details
-        const response = await fetch(`/api/cars/${id}`, {
+        const response = await fetch(`${API_URL}/api/cars/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ imageUrl, model, brand, price, year, fuelType, transmission, seats, body }),
             headers: { 'Content-Type': 'application/json' }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from 'dayjs';
+import { API_URL } from "../../constants";
 import './rentACar.css';
 
 // Component for renting a car with date selection and agreement checkbox
@@ -21,7 +22,7 @@ const RentACar = ({ carDetails }) => {
     useEffect(() => {
         const fetchTakenDates = async () => {
             try {
-                const response = await fetch(`/api/reservations/dates/${carDetails._id}`, {
+                const response = await fetch(`${API_URL}/api/reservations/dates/${carDetails._id}`, {
                     headers: { 'Authorization': `Bearer ${user.token}` }
                 });
 

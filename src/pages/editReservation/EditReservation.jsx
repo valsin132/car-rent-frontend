@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from 'dayjs'
+import { API_URL } from "../../constants";
 import './editReservation.css';
 
 // Component for editing reservation details
@@ -27,7 +28,7 @@ const EditReservation = () => {
     useEffect(() => {
         const fetchTakenDates = async () => {
             try {
-                const response = await fetch(`/api/reservations/dates/${reservation.car_id}`, {
+                const response = await fetch(`${API_URL}/api/reservations/dates/${reservation.car_id}`, {
                     headers: { 'Authorization': `Bearer ${user.token}` }
                 });
 
@@ -58,7 +59,7 @@ const EditReservation = () => {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch('/api/cars');
+                const response = await fetch(`${API_URL}/api/cars`);
 
                 if (response.status === 500) {
                     setError('Serverio klaida');
@@ -112,7 +113,7 @@ const EditReservation = () => {
         };
 
         try {
-            const response = await fetch(`/api/reservations/${id}`, {
+            const response = await fetch(`${API_URL}/api/reservations/${id}`, {
                 method: 'PUT',
                 body: JSON.stringify({
                     car_id: selectedCar._id,
@@ -152,7 +153,7 @@ const EditReservation = () => {
     // Handles the deletion of the specific reservation
     const handleDelete = async () => {
         try {
-            const response = await fetch(`/api/reservations/${reservation._id}`, {
+            const response = await fetch(`${API_URL}/api/reservations/${reservation._id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${user.token}` }
             });
