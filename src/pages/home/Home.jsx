@@ -10,6 +10,7 @@ import mercedes from "../../pictures/mercedes.png"
 import nissan from "../../pictures/nissan.png"
 import toyota from "../../pictures/toyota.png"
 import vw from "../../pictures/vw.png"
+import { API_URL } from "../../constants";
 import './home.css';
 
 // Home component containing sections like featured cars, registration steps, and brand logos
@@ -17,8 +18,6 @@ const Home = () => {
     const [carsData, setCarsData] = useState([])
     const [showModal, setShowModal] = useState(false);
     const [error, setError] = useState(null);
-
-    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
     //Fetches a random set of cars from the API
     useEffect(() => {
