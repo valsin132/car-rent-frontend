@@ -35,7 +35,7 @@ const Footer = () => {
                         <a href="#"><i className="bi bi-youtube"></i></a>
                     </div>
                 </footer>
-                <p className='copyright-text'>{`Copyright ${currentYear} \u00A9 VCF Rent, Visos teisės saugomos.`}</p>
+                <p className='copyright-text'>{`Copyright ${currentYear} \u00A9 valdemaras.net, Visos teisės saugomos.`}</p>
             </div>
         </div>
     );
