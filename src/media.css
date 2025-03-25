@@ -16,6 +16,10 @@
 }
 
 @media all and (max-width: 590px) {
+    .navbar .container {
+        padding: 0 10px;
+    }
+
     .navbar .container a h2 {
         content: url(../src/pictures/logo2-2.png);
         width: 70px;
